@@ -115,9 +115,6 @@ class SlidingPuzzle {
                 tile.style.backgroundSize = '300% 300%';
                 tile.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
                 
-                // Add tile number for clarity
-                tile.textContent = tileValue + 1;
-                
                 // Check if this tile is moveable
                 if (this.isMoveable(index)) {
                     tile.classList.add('moveable');
