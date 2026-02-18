@@ -643,8 +643,9 @@ class Game {
         this.clearActiveEffect();
         this.activeEffect = 'speed';
         
-        // Make snake faster (reduce interval)
-        this.speed = Math.max(CONFIG.MIN_SPEED, this.baseSpeed * 0.6);
+        // Make snake faster (reduce interval) - ensure it's at least 20ms faster
+        const boostedSpeed = this.baseSpeed * 0.6;
+        this.speed = Math.max(CONFIG.MIN_SPEED * 0.6, boostedSpeed);
         clearInterval(this.gameLoop);
         this.gameLoop = setInterval(() => this.update(), this.speed);
         
@@ -688,11 +689,26 @@ class Game {
         let message = '❓ MYSTERY: ';
         switch (chosenEffect) {
             case 'speed':
-                this.applySpeedBoost();
+                this.clearActiveEffect();
+                this.activeEffect = 'speed';
+                const boostedSpeed = this.baseSpeed * 0.6;
+                this.speed = Math.max(CONFIG.MIN_SPEED * 0.6, boostedSpeed);
+                clearInterval(this.gameLoop);
+                this.gameLoop = setInterval(() => this.update(), this.speed);
+                this.effectTimer = setTimeout(() => {
+                    this.clearActiveEffect();
+                }, CONFIG.EFFECT_DURATION);
                 message += 'SPEED BOOST!';
                 break;
             case 'slow':
-                this.applySlow();
+                this.clearActiveEffect();
+                this.activeEffect = 'slow';
+                this.speed = this.baseSpeed * 1.5;
+                clearInterval(this.gameLoop);
+                this.gameLoop = setInterval(() => this.update(), this.speed);
+                this.effectTimer = setTimeout(() => {
+                    this.clearActiveEffect();
+                }, CONFIG.EFFECT_DURATION);
                 message += 'SLOWED DOWN!';
                 break;
             case 'double':
@@ -701,7 +717,7 @@ class Game {
                 break;
         }
         
-        // Override the message
+        // Show the mystery message
         this.showEffectMessage(message);
     }
     
