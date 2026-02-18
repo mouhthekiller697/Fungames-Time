@@ -1,6 +1,6 @@
 # 🎮 Fungames Time
 
-A multi-game platform featuring three fun and engaging games! Built with pure HTML, CSS, and JavaScript - no external dependencies required!
+A multi-game platform featuring fun and engaging games! Built with pure HTML, CSS, and JavaScript - no external dependencies required!
 
 ## 🎮 Games Included
 
@@ -28,17 +28,6 @@ A classic Tic Tac Toe game with both local multiplayer and AI opponent options.
 - **Win detection** and animated winning cells
 - **Score tracking** across multiple games
 - **Clean, intuitive interface**
-
-### 🧩 Sliding Puzzle
-A 3x3 sliding photo puzzle game with colorful gradient images.
-
-**Features:**
-- **6 different photos** to choose from
-- **Smart shuffle algorithm** ensures puzzle is always solvable
-- **Move counter** tracks your efficiency
-- **Timer** to challenge yourself
-- **Preview button** to see the complete image
-- **Win detection** with congratulations modal
 
 ## 🎨 Visual Design
 - **Beautiful, modern UI** with gradient backgrounds
@@ -80,13 +69,6 @@ This is a pure client-side application - no server, no build process, no depende
 - First player is always X
 - Choose between playing with a friend or against the AI
 
-### Sliding Puzzle
-**Rules:**
-- Click on tiles adjacent to the empty space to slide them
-- Arrange all tiles in order to complete the puzzle
-- The puzzle is solved when all numbered tiles are in sequence
-- Use the preview button to see the complete image
-
 ## 📁 Project Structure
 
 ```
@@ -94,15 +76,12 @@ Fungames-Time/
 ├── index.html         # Main menu/landing page
 ├── snake.html         # Snake game page
 ├── tictactoe.html     # Tic Tac Toe game page
-├── puzzle.html        # Sliding puzzle game page
 ├── styles.css         # Shared/base styling
 ├── main.css           # Main menu specific styles
 ├── snake.css          # Snake game specific styles
 ├── tictactoe.css      # Tic Tac Toe specific styles
-├── puzzle.css         # Puzzle game specific styles
 ├── game.js            # Snake game logic
 ├── tictactoe.js       # Tic Tac Toe game logic
-├── puzzle.js          # Puzzle game logic
 └── README.md          # This file
 ```
 
@@ -144,11 +123,6 @@ All games automatically adapt to different screen sizes:
 - **Medium Mode**: 50/50 mix of optimal and random moves
 - **Hard Mode**: Minimax algorithm for perfect play
 
-### Puzzle Algorithm
-- Smart shuffle ensures puzzle is always solvable
-- Move validation only allows adjacent tiles to slide
-- Win detection checks if all tiles are in correct order
-
 ## 🎨 Customization
 
 ### Adding New Themes (Snake)
@@ -165,12 +139,6 @@ newtheme: {
 
 ### Adding New Snake Skins
 Edit the `SNAKE_SKINS` object in `game.js` to add custom rendering logic.
-
-### Adding New Puzzle Photos
-Edit the `photos` object in `puzzle.js`:
-```javascript
-7: 'linear-gradient(135deg, #color1, #color2)'
-```
 
 ## 🏆 Score Systems
 
@@ -204,4 +172,4 @@ Feel free to fork this project and add your own features, games, themes, or impr
 - GitHub Profile: [mouhthekiller697](https://github.com/mouhthekiller697)
 
 ## 🎉 Enjoy!
-Have fun playing all three games! Try to beat your high scores and challenge your friends!
+Have fun playing the games! Try to beat your high scores and challenge your friends!
